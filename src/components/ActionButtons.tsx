@@ -9,6 +9,9 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import { actionButtonStyles, Colors } from '../styles';
 
+// Button styling constants
+const DELETE_BUTTON_BORDER_RADIUS = 30;
+
 interface ActionButtonsProps {
   onCall: () => void;
   onDelete: () => void;
@@ -194,7 +197,7 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
     backgroundColor: 'rgba(255, 59, 48, 0.2)',
-    borderRadius: 30,
+    borderRadius: DELETE_BUTTON_BORDER_RADIUS,
   },
   callIconContainer: {
     width: 30,

@@ -3,6 +3,10 @@ import { View, Text, StyleSheet, Platform } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { displayStyles, Colors } from '../styles';
 
+// Phone number formatting constants
+const NON_DIGIT_PATTERN = /\D/g;
+const PHONE_NUMBER_PATTERN = /^(\d{0,3})(\d{0,3})(\d{0,4})$/;
+
 interface DisplayProps {
   phoneNumber: string;
 }
@@ -14,8 +18,8 @@ interface DisplayProps {
 const Display: React.FC<DisplayProps> = ({ phoneNumber }) => {
   // Format phone number for display (e.g., (123) 456-7890)
   const formatPhoneNumber = (number: string): string => {
-    const cleaned = number.replace(/\D/g, '');
-    const match = cleaned.match(/^(\d{0,3})(\d{0,3})(\d{0,4})$/);
+    const cleaned = number.replace(NON_DIGIT_PATTERN, '');
+    const match = cleaned.match(PHONE_NUMBER_PATTERN);
     
     if (!match) return number;
     

@@ -10,6 +10,9 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import { dialPadStyles, Colors } from '../styles';
 
+// Button styling constants
+const BUTTON_BORDER_RADIUS = 40;
+
 interface DialPadProps {
   onPress: (digit: string) => void;
   onLongPressZero?: () => void;
@@ -170,7 +173,7 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
     backgroundColor: Colors.glassHighlight,
-    borderRadius: 40,
+    borderRadius: BUTTON_BORDER_RADIUS,
   },
   buttonContent: {
     alignItems: 'center',
