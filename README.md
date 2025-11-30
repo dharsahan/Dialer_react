@@ -8,10 +8,13 @@ A modern phone dialer application built with React Native featuring an iOS 26-li
 - 📱 **Full Dial Pad**: Complete numeric dial pad with letter hints
 - ✨ **Smooth Animations**: Press animations with scale and opacity effects
 - 📞 **Real Phone Integration**: Make actual phone calls via system dialer
+- 📲 **Incoming Call Screen**: Answer or decline incoming calls with animated UI
+- 🔊 **Calling Screen**: Active call display with mute, speaker, and keypad controls
 - 🎨 **Gradient Effects**: Multiple layered gradients for depth
 - 🔢 **Smart Number Formatting**: Auto-formats phone numbers as you type
 - ⌫ **Easy Delete**: Single tap to delete, long press to clear all
 - ➕ **Plus Sign Support**: Long press 0 to add '+' for international calls
+- ⏱️ **Call Timer**: Real-time call duration display
 
 ## Screenshots
 
@@ -20,6 +23,8 @@ The app features a dark glassmorphism theme with:
 - Circular dial buttons with glass effect
 - Green call button with glow effect
 - Subtle colored orbs in the background for depth
+- Incoming call screen with pulsing animations
+- Active call screen with mute/speaker toggles
 
 ## Prerequisites
 
@@ -54,13 +59,15 @@ npm run android
 ## Project Structure
 
 ```
-├── App.tsx                    # Main application component
+├── App.tsx                    # Main application component with screen navigation
 ├── src/
 │   ├── components/
 │   │   ├── Display.tsx        # Phone number display
 │   │   ├── DialPad.tsx        # Numeric dial pad
 │   │   ├── ActionButtons.tsx  # Call and delete buttons
 │   │   ├── GlassBackground.tsx # Liquid glass background
+│   │   ├── IncomingCallScreen.tsx # Incoming call UI
+│   │   ├── CallingScreen.tsx  # Active call UI
 │   │   └── index.ts           # Component exports
 │   └── styles/
 │       ├── colors.ts          # Color palette
@@ -71,6 +78,32 @@ npm run android
 ├── package.json
 └── README.md
 ```
+
+## Screens
+
+### Dialer Screen
+The main dial pad for entering phone numbers with:
+- Glass-styled numeric buttons (0-9, *, #)
+- Letter hints (ABC, DEF, etc.)
+- Number display with auto-formatting
+- Call and delete action buttons
+
+### Incoming Call Screen
+Displays when receiving a call with:
+- Caller avatar with initials and pulsing animation
+- Caller name and number display
+- Answer button (green) with pulsing glow
+- Decline button (red)
+
+### Calling Screen
+Active during outgoing and ongoing calls with:
+- Contact avatar and information
+- Call status (Calling.../Ringing.../Connected)
+- Call duration timer
+- Mute toggle button
+- Speaker toggle button
+- Keypad button
+- End call button
 
 ## Dependencies
 
